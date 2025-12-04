@@ -1,3 +1,2 @@
-Data Structures and Algorithms
-
+**Data Structures and Algorithms**
 Because I need a job
