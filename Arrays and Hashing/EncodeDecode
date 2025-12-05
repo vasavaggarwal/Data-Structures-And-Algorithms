@@ -1,0 +1,27 @@
+import java.util.*;
+
+public class EncodeDecode {
+    public String encode(List<String> strs) {
+        String str = "";
+        for (String s: strs){
+            str += s.length() + "#" + s;
+        }
+        return str;
+    }
+
+    public List<String> decode(String str) {
+        List<String> output = new ArrayList<>();
+        int pos=0;
+        while (pos<str.length()){
+            int hashid = pos;
+            while (str.charAt(hashid)!='#'){
+                hashid++;
+            }
+            int length = Integer.parseInt(str.substring(pos,hashid));
+            pos = hashid+1;
+            output.add(str.substring(pos, pos+length));
+            pos += length;
+        }
+        return output;
+    }
+}
